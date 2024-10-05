@@ -6,6 +6,8 @@
   "author": "PATEL96",
   "license": "MIT",
   "dependencies": {
+    "@openzeppelin/contracts-upgradeable": "^5.0.2",
+    "@openzeppelin/hardhat-upgrades": "^3.4.0",
     "hardhat": "^2.22.12"
   },
   "devDependencies": {
