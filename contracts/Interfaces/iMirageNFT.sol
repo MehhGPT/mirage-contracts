@@ -9,10 +9,9 @@ interface IMirageNFT {
         uint256 ParentPageId;
         uint256[] SiblingPages;
     }
-	
+
     function mintPage(
         address to,
-        uint256 pageId,
         uint256 parentPageId
     ) external;
 

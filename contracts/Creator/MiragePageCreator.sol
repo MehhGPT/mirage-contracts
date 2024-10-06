@@ -1,30 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
-import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
-import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
+import "@openzeppelin/contracts/access/AccessControl.sol";
 import "../Interfaces/iMirageNFT.sol";
 
-contract PageCreator is Initializable, AccessControlUpgradeable {
+contract MiragePageCreator is AccessControl {
     event PageCreated(
         address indexed storyAddress,
-        uint256 pageId,
         uint256 parentPageId
     );
 
-    function initialize(address admin) external initializer {
-        __AccessControl_init();
-        _grantRole(DEFAULT_ADMIN_ROLE, admin);
-    }
+	constructor() {}
 
     function createPage(
         address storyAddress,
         address to,
-        uint256 pageId,
         uint256 parentPageId
     ) external {
-        IMirageNFT(storyAddress).mintPage(to, pageId, parentPageId);
-        emit PageCreated(storyAddress, pageId, parentPageId);
+        IMirageNFT(storyAddress).mintPage(to, parentPageId);
+        emit PageCreated(storyAddress, parentPageId);
     }
 
     function getPageData(
