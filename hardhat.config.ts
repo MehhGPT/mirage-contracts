@@ -1,4 +1,5 @@
 import "@nomicfoundation/hardhat-toolbox";
+import "@openzeppelin/hardhat-upgrades";
 import "hardhat-deploy";
 import type {HardhatUserConfig} from "hardhat/config";
 import {vars} from "hardhat/config";

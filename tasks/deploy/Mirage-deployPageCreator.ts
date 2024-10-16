@@ -2,7 +2,7 @@ import { task } from "hardhat/config";
 import { MiragePageCreator } from "../contractName";
 
 
-task("DEPLOY_MIR_PAGE_CREATOR", "deploys EEX NFT contract", async (_taskArgs, hre) => {
+task("DEPLOY_MIR_PAGE_CREATOR", "deploys Mirage Page Creator contract", async (_taskArgs, hre) => {
 
     console.log("--------------- Initial Setup Started ---------------");
 
@@ -22,7 +22,10 @@ task("DEPLOY_MIR_PAGE_CREATOR", "deploys EEX NFT contract", async (_taskArgs, hr
     console.log("--------------- Contract Deployment Started ---------------");
 
     const C1 = await hre.ethers.getContractFactory(contractName);
-    const C1i = await C1.deploy();
+    const C1i = await hre.upgrades.deployProxy(C1, [], {
+        initializer: "Initialize",
+        kind: "uups",
+    });
 
     console.log(`${contractName} deployed to: `, C1i.target);
 
