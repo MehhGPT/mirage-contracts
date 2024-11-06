@@ -57,6 +57,10 @@ contract MirageNFT is AccessControl, ERC721 {
         return pageMetadata[pageId];
     }
 
+    function getChildPages(uint256 pageId) external view returns(uint256[] memory){
+        return childPages[pageId];
+    }
+
     function supportsInterface(
         bytes4 interfaceId
     ) public view virtual override(ERC721, AccessControl) returns (bool) {
