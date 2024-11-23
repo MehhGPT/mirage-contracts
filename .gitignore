@@ -9,6 +9,7 @@ dist
 node_modules
 types
 deployments
+typechain-types/
 
 # files
 *.env

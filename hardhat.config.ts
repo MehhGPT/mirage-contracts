@@ -12,6 +12,7 @@ import './tasks/deploy/Mirage-DeployStoryCreator';
 import './tasks/deploy/Mirage-DeployPageCreator';
 import './tasks/upgrade/Mirage-UpgradePageCreator';
 import './tasks/upgrade/Mirage-UpgradeStoryCreator';
+import './tasks/ChangePageCreatorAddress';
 
 const mnemonic: string = vars.get("MNEMONIC");
 const infuraApiKey: string = vars.get("INFURA_API_KEY");
