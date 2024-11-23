@@ -2,7 +2,7 @@ import { task } from "hardhat/config";
 import { MirageStoryCreator } from "../contractName";
 
 
-task("DEPLOY_MIR_STORY_CREATOR", "deploys Mirage Page Creator contract", async (_taskArgs, hre) => {
+task("DEPLOY_MIR_STORY_CREATOR", "deploys Mirage Story Creator contract", async (_taskArgs, hre) => {
 
     console.log("--------------- Initial Setup Started ---------------");
 
