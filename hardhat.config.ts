@@ -1,9 +1,10 @@
 import "@nomicfoundation/hardhat-toolbox";
 import "@openzeppelin/hardhat-upgrades";
 import "hardhat-deploy";
-import type {HardhatUserConfig} from "hardhat/config";
-import {vars} from "hardhat/config";
-import type {NetworkUserConfig} from "hardhat/types";
+import 'hardhat-docgen';
+import type { HardhatUserConfig } from "hardhat/config";
+import { vars } from "hardhat/config";
+import type { NetworkUserConfig } from "hardhat/types";
 
 // Run 'npx hardhat vars setup' to see the list of variables that need to be set
 import "./tasks/accounts";
@@ -111,6 +112,11 @@ const config: HardhatUserConfig = {
     typechain: {
         outDir: "types",
         target: "ethers-v6",
+    },
+    docgen: {
+        path: './docs',
+        clear: true,
+        runOnCompile: true,
     },
 };
 
