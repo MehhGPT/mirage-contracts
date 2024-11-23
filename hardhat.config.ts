@@ -9,8 +9,9 @@ import type { NetworkUserConfig } from "hardhat/types";
 // Run 'npx hardhat vars setup' to see the list of variables that need to be set
 import "./tasks/accounts";
 import './tasks/deploy/Mirage-DeployStoryCreator';
+import './tasks/deploy/Mirage-DeployPageCreator';
+import './tasks/upgrade/Mirage-UpgradePageCreator';
 import './tasks/upgrade/Mirage-UpgradeStoryCreator';
-import './tasks/deploy/Mirage-deployPageCreator';
 
 const mnemonic: string = vars.get("MNEMONIC");
 const infuraApiKey: string = vars.get("INFURA_API_KEY");
